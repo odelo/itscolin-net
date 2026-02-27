@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colin | itscolin.net</title>
+    <meta
+      name="description"
+      content="Personal website for Colin featuring current projects."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <h1>Colin</h1>
+      <p class="subheading">Building cool things on the internet.</p>
+    </header>
+
+    <main class="container">
+      <section class="profile-card" aria-label="Profile">
+        <div class="profile-photo-wrap">
+          <img
+            class="profile-photo"
+            src="assets/profile.jpg"
+            alt="Profile picture of Colin"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          />
+          <div class="photo-fallback" aria-hidden="true">C</div>
+        </div>
+
+        <div class="profile-copy">
+          <h2>About Me</h2>
+          <p>
+            Hi, I’m Colin. This is my space on the web where I share what I’m
+            building, learning, and shipping.
+          </p>
+          <p>
+            Replace <code>assets/profile.jpg</code> with your own image to
+            personalize this page.
+          </p>
+        </div>
+      </section>
+
+      <section class="projects-section" aria-label="Projects">
+        <div class="section-head">
+          <h2>Projects In Progress</h2>
+          <p>Scroll horizontally to explore.</p>
+        </div>
+
+        <div class="project-wheel" id="projectWheel" tabindex="0" aria-label="Project links">
+          <a class="project-tile" href="projects/project-1.html">
+            <h3>Project One</h3>
+            <p>Brief summary of your first active project.</p>
+          </a>
+          <a class="project-tile" href="projects/project-2.html">
+            <h3>Project Two</h3>
+            <p>Brief summary of your second active project.</p>
+          </a>
+          <a class="project-tile" href="projects/project-3.html">
+            <h3>Project Three</h3>
+            <p>Brief summary of your third active project.</p>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>itscolin.net</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
