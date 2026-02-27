@@ -1,23 +1,6 @@
 const wheel = document.getElementById("projectWheel");
 const prevButton = document.getElementById("wheelPrev");
 const nextButton = document.getElementById("wheelNext");
-const profileMain = document.querySelector(".profile-main");
-
-const alignProfileMainToViewportCenter = () => {
-  if (!profileMain) return;
-
-  if (window.innerWidth <= 700) {
-    profileMain.style.marginTop = "";
-    return;
-  }
-
-  profileMain.style.marginTop = "0";
-  const rect = profileMain.getBoundingClientRect();
-  const rowCenter = rect.top + rect.height / 2;
-  const targetCenter = window.innerHeight * 0.5;
-  const offset = targetCenter - rowCenter;
-  profileMain.style.marginTop = `${offset}px`;
-};
 
 if (wheel && prevButton && nextButton) {
   const getStepSize = () => {
@@ -69,7 +52,3 @@ if (wheel && prevButton && nextButton) {
   window.addEventListener("resize", syncWheelState);
   syncWheelState();
 }
-
-window.addEventListener("resize", alignProfileMainToViewportCenter);
-window.addEventListener("load", alignProfileMainToViewportCenter);
-alignProfileMainToViewportCenter();
