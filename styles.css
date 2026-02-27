@@ -19,9 +19,10 @@ body {
   margin: 0;
   margin-top: 1rem;
   font-family: "Trebuchet MS", "Segoe UI", Tahoma, sans-serif;
+  font-size: 16px;
   background: var(--bg);
   color: var(--text);
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
 h1,
@@ -30,6 +31,26 @@ h3 {
   margin-top: 0;
   color: var(--metal-5);
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(1.95rem, 3.8vw, 2.45rem);
+}
+
+h2 {
+  font-size: clamp(1.3rem, 2.3vw, 1.6rem);
+}
+
+h3 {
+  font-size: 1.15rem;
+}
+
+p,
+li,
+a,
+button {
+  font-size: 1rem;
 }
 
 .site-header,
@@ -57,15 +78,21 @@ h3 {
 }
 
 .profile-card {
-  display: grid;
-  grid-template-columns: 180px 1fr;
-  gap: 1.25rem;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+  padding: 0.35rem 0;
+}
+
+.profile-header {
+  text-align: center;
 }
 
 .profile-photo-wrap {
-  width: 160px;
-  height: 160px;
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
   position: relative;
 }
 
@@ -92,49 +119,85 @@ h3 {
   font-weight: bold;
 }
 
-.profile-heading-row {
+.profile-email {
+  display: block;
+  font-size: 1rem;
+  color: var(--metal-5);
+  text-decoration: none;
+  margin-top: 0.65rem;
+}
+
+.profile-email:hover,
+.profile-email:focus-visible {
+  text-decoration: underline;
+}
+
+.profile-links {
   display: flex;
-  align-items: center;
-  gap: 0.65rem;
-  margin-bottom: 0.35rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.55rem;
 }
 
-.profile-heading-row h2 {
-  margin: 0;
-}
-
-.social-links {
-  display: flex;
-  align-items: center;
-  gap: 0.45rem;
-}
-
-.social-link {
-  width: 2rem;
-  height: 2rem;
+.profile-link-chip {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
+  gap: 0.4rem;
+  height: 2rem;
+  padding: 0 0.75rem;
   border: 1px solid var(--line);
   border-radius: 999px;
   color: var(--heading);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
   background: #ffffff;
   transition: border-color 0.15s ease, transform 0.15s ease;
 }
 
-.social-link svg {
-  width: 1.1rem;
-  height: 1.1rem;
+.profile-link-chip svg {
+  width: 0.95rem;
+  height: 0.95rem;
   fill: currentColor;
 }
 
-.social-link:hover,
-.social-link:focus-visible {
+.profile-link-chip:hover,
+.profile-link-chip:focus-visible {
   border-color: var(--heading);
   transform: translateY(-1px);
 }
 
+.profile-main {
+  display: grid;
+  grid-template-columns: minmax(240px, 1fr) minmax(240px, 1fr);
+  gap: 2rem;
+  align-items: start;
+  justify-content: center;
+  width: min(900px, 100%);
+  margin: 0 auto;
+}
+
+.about-block {
+  text-align: left;
+  width: 100%;
+}
+
+.about-block h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1.05rem;
+  color: var(--metal-5);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.about-block p {
+  margin: 0;
+  max-width: none;
+}
+
 .projects-section {
+  text-align: center;
+  justify-content: center;
   margin-top: 2rem;
 }
 
@@ -218,6 +281,7 @@ h3 {
 
 .project-tile h3 {
   margin-bottom: 0.5rem;
+  font-size: 1.12rem;
 }
 
 .project-tile:hover,
@@ -272,18 +336,18 @@ h3 {
 
 @media (max-width: 700px) {
   .profile-card {
+    padding: 0.25rem 0;
+  }
+
+  .profile-photo-wrap {
+    max-width: 220px;
+  }
+
+  .profile-main {
     grid-template-columns: 1fr;
     justify-items: center;
-    text-align: center;
-  }
-
-  .profile-copy {
     text-align: left;
     width: 100%;
-  }
-
-  .profile-heading-row {
-    flex-wrap: wrap;
   }
 
   .project-carousel {

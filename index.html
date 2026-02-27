@@ -10,58 +10,68 @@
   <body>
     <main class="container">
       <section class="profile-card" aria-label="Profile">
-        <div class="profile-photo-wrap">
-          <img
-            class="profile-photo"
-            src="assets/profile-pic.png"
-            alt="Profile picture of Colin"
-            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-          />
-          <div class="photo-fallback" aria-hidden="true">C</div>
+        <div class="profile-header">
+          <div class="profile-links" aria-label="Social links">
+            <a
+              class="profile-link-chip"
+              href="https://github.com/odelo"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              title="GitHub"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path
+                  d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.58 0-.29-.01-1.24-.02-2.24-3.34.73-4.04-1.41-4.04-1.41-.55-1.4-1.33-1.78-1.33-1.78-1.09-.75.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .11-.77.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.48 11.48 0 0 1 6 0c2.28-1.55 3.3-1.23 3.3-1.23.66 1.65.24 2.87.12 3.17.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.49 5.92.43.37.82 1.1.82 2.22 0 1.6-.01 2.88-.01 3.27 0 .32.22.7.83.58A12 12 0 0 0 24 12c0-6.63-5.37-12-12-12Z"
+                />
+              </svg>
+              <span>GitHub</span>
+            </a>
+            <a
+              class="profile-link-chip"
+              href="https://www.linkedin.com/in/regan-col/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              title="LinkedIn"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path
+                  d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5ZM.5 8h4V23h-4V8Zm7 0h3.83v2.05h.05c.53-1.01 1.84-2.08 3.79-2.08C19.22 7.97 21 10.26 21 14.02V23h-4v-7.3c0-1.74-.03-3.98-2.43-3.98-2.43 0-2.8 1.9-2.8 3.86V23h-4V8Z"
+                />
+              </svg>
+              <span>LinkedIn</span>
+            </a>
+          </div>
+          <a class="profile-email" href="mailto:colin.ryan.regan@gmail.com"
+            >colin.ryan.regan@gmail.com</a
+          >
         </div>
 
-        <div class="profile-copy">
-          <div class="profile-heading-row">
-            <h2>Hi, I'm Colin</h2>
-            <div class="social-links" aria-label="Social links">
-              <a
-                class="social-link"
-                href="https://github.com/odelo"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub"
-                title="GitHub"
-              >
-                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                  <path
-                    d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.58 0-.29-.01-1.24-.02-2.24-3.34.73-4.04-1.41-4.04-1.41-.55-1.4-1.33-1.78-1.33-1.78-1.09-.75.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .11-.77.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.48 11.48 0 0 1 6 0c2.28-1.55 3.3-1.23 3.3-1.23.66 1.65.24 2.87.12 3.17.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.49 5.92.43.37.82 1.1.82 2.22 0 1.6-.01 2.88-.01 3.27 0 .32.22.7.83.58A12 12 0 0 0 24 12c0-6.63-5.37-12-12-12Z"
-                  />
-                </svg>
-              </a>
-              <a
-                class="social-link"
-                href="https://www.linkedin.com/in/regan-col/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                title="LinkedIn"
-              >
-                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                  <path
-                    d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5ZM.5 8h4V23h-4V8Zm7 0h3.83v2.05h.05c.53-1.01 1.84-2.08 3.79-2.08C19.22 7.97 21 10.26 21 14.02V23h-4v-7.3c0-1.74-.03-3.98-2.43-3.98-2.43 0-2.8 1.9-2.8 3.86V23h-4V8Z"
-                  />
-                </svg>
-              </a>
-            </div>
+        <div class="profile-main">
+          <div class="profile-photo-wrap">
+            <img
+              class="profile-photo"
+              src="assets/profile-pic.png"
+              alt="Profile picture of Colin"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            />
+            <div class="photo-fallback" aria-hidden="true">C</div>
           </div>
-          <p>
-            This is my space on the web where I share what I'm building,
-            learning, and shipping.
-          </p>
+
+          <section class="about-block" aria-label="About Colin">
+            <h2>About</h2>
+            <p>
+              Hi, I'm Colin. This is my space on the web where I share what I'm
+              building, learning, and shipping. Currently an embedded firmware engineer focused on creating pleasance for my fellow home-bodies.  
+            </p>
+          </section>
         </div>
       </section>
 
       <section class="projects-section" aria-label="Projects">
+          <h3> WHAT I'M UP TO</h3>
+        </div>
         <div class="project-carousel">
           <button
             class="wheel-arrow"
