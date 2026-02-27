@@ -132,6 +132,10 @@ button {
   text-decoration: underline;
 }
 
+.profile-email:visited {
+  color: var(--metal-5);
+}
+
 .profile-links {
   display: flex;
   justify-content: center;
@@ -165,6 +169,10 @@ button {
 .profile-link-chip:focus-visible {
   border-color: var(--heading);
   transform: translateY(-1px);
+}
+
+.profile-link-chip:visited {
+  color: var(--heading);
 }
 
 .profile-main {
@@ -288,6 +296,10 @@ button {
 .project-tile:focus-visible {
   transform: translateY(-2px);
   border-color: var(--heading);
+}
+
+.project-tile:visited {
+  color: var(--text);
 }
 
 .content-card {
