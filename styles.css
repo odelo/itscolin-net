@@ -151,6 +151,11 @@ button {
 .name-banner {
   margin: 0;
   text-align: center;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
   font-family: "Bitcount Grid Double", system-ui;
   font-optical-sizing: auto;
   font-weight: 400;
@@ -166,6 +171,36 @@ button {
   text-transform: uppercase;
   color: var(--metal-5);
   text-shadow: none;
+}
+
+.name-banner::after {
+  content: "";
+  position: absolute;
+  top: -35%;
+  bottom: -35%;
+  left: -45%;
+  width: 30%;
+  background: linear-gradient(
+    105deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.9) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: translateX(-260%) skewX(-18deg);
+  animation: name-shimmer 15s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes name-shimmer {
+  0%,
+  86% {
+    transform: translateX(-260%) skewX(-18deg);
+  }
+
+  96%,
+  100% {
+    transform: translateX(360%) skewX(-18deg);
+  }
 }
 
 .profile-links {
