@@ -1,14 +1,14 @@
 :root {
-  --bg: #ffffff;
-  --heading: #bcc6cc;
-  --text: #111111;
-  --line: #d7deeb;
-  --surface: #f7faff;
-  --metal-1: #f9fbfc;
-  --metal-2: #d8dee3;
-  --metal-3: #9aa3ab;
-  --metal-4: #c2c9cf;
-  --metal-5: #7f8992;
+  --bg: #FFFFFF;
+  --heading: #000000;
+  --hover-border: #636364;
+  --text: #000000;
+  --sub-text: #a1a1a1;
+  --line: #FFFFFF;
+  --surface: #f5f5f7;
+  --white-0: rgba(255, 255, 255, 0);
+  --white-70: rgba(255, 255, 255, 0.7);
+  --white-92: rgba(255, 255, 255, 0.92);
 }
 
 * {
@@ -41,8 +41,7 @@ h1,
 h2,
 h3 {
   margin-top: 0;
-  color: var(--metal-5);
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+  color: var(--heading);
   line-height: 1.2;
 }
 
@@ -67,8 +66,8 @@ button {
 
 .site-header,
 .site-footer {
-  width: min(1000px, 92vw);
-  margin: 0 auto;
+  max-width: 1000px;
+  margin-left: 4vw;
   padding: 1.25rem 0;
 }
 
@@ -84,8 +83,8 @@ button {
 }
 
 .container {
-  width: min(1000px, 92vw);
-  margin: 0 auto;
+  max-width: 1000px;
+  margin-left: 4vw;
   padding-bottom: 2rem;
 }
 
@@ -97,44 +96,14 @@ button {
 }
 
 .profile-header {
-  text-align: center;
-}
-
-.profile-photo-wrap {
-  width: 100%;
-  max-width: 320px;
-  aspect-ratio: 1 / 1;
-  margin: 0 auto;
-  position: relative;
-}
-
-.profile-photo,
-.photo-fallback {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  border: 3px solid var(--heading);
-}
-
-.profile-photo {
-  object-fit: cover;
-  display: block;
-}
-
-.photo-fallback {
-  display: none;
-  align-items: center;
-  justify-content: center;
-  font-size: 3rem;
-  color: var(--heading);
-  background: #eef4ff;
-  font-weight: bold;
+  text-align: left;
+  font-style: italic;
 }
 
 .profile-email {
   display: block;
   font-size: 1.1rem;
-  color: var(--metal-5);
+  color: var(--heading);
   text-decoration: none;
   margin-top: 0.65rem;
 }
@@ -145,31 +114,27 @@ button {
 }
 
 .profile-email:visited {
-  color: var(--metal-5);
+  color: var(--heading);
 }
 
 .name-banner {
   margin: 0;
-  text-align: center;
+  text-align: left;
   position: relative;
-  display: inline-block;
-  left: 50%;
-  transform: translateX(-50%);
-  overflow: hidden;
-  font-family: "Bitcount Grid Double", system-ui;
+  display: block;
+  /* font-family: "Bitcount Grid Double", system-ui; */
   font-optical-sizing: auto;
-  font-weight: 400;
+  font-weight: 800;
   font-style: normal;
   font-variation-settings:
     "slnt" 0,
     "CRSV" 0.5,
     "ELSH" 0,
     "ELXP" 0;
-  font-size: clamp(10rem, 6vw, 10rem);
+  font-size: clamp(4rem, 6vw, 4rem);
   line-height: 1;
   letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--metal-5);
+  color: var(--heading);
   text-shadow: none;
 }
 
@@ -179,9 +144,9 @@ button {
   inset: -35% -10%;
   background-image: linear-gradient(
     105deg,
-    rgba(255, 255, 255, 0) 44%,
-    rgba(255, 255, 255, 0.92) 50%,
-    rgba(255, 255, 255, 0) 56%
+    var(--white-0) 44%,
+    var(--white-92) 50%,
+    var(--white-0) 56%
   );
   background-repeat: no-repeat;
   background-size: 240% 240%;
@@ -203,7 +168,7 @@ button {
 
 .profile-links {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
   gap: 0.55rem;
 }
@@ -215,13 +180,12 @@ button {
   height: 2.2rem;
   padding: 0 0.9rem;
   border: 1px solid var(--line);
-  border-radius: 999px;
   color: var(--heading);
   text-decoration: none;
   font-size: 1rem;
   font-weight: 600;
-  background: #ffffff;
-  transition: border-color 0.15s ease, transform 0.15s ease;
+  background: var(--bg);
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
 }
 
 .profile-link-chip svg {
@@ -232,8 +196,9 @@ button {
 
 .profile-link-chip:hover,
 .profile-link-chip:focus-visible {
+  background: var(--heading);
   border-color: var(--heading);
-  transform: translateY(-1px);
+  color: var(--bg);
 }
 
 .profile-link-chip:visited {
@@ -241,13 +206,7 @@ button {
 }
 
 .profile-main {
-  display: grid;
-  grid-template-columns: minmax(240px, 1fr) minmax(240px, 1fr);
-  gap: 2rem;
-  align-items: start;
-  justify-content: center;
-  width: min(900px, 100%);
-  margin: 3rem auto;
+  margin-top: 0.5rem;
 }
 
 .about-block {
@@ -258,8 +217,7 @@ button {
 .about-block h2 {
   margin: 0 0 0.35rem;
   font-size: 1.2rem;
-  color: var(--metal-5);
-  text-transform: uppercase;
+  color: var(--heading);
   letter-spacing: 0.06em;
 }
 
@@ -269,8 +227,6 @@ button {
 }
 
 .projects-section {
-  text-align: center;
-  justify-content: center;
   margin-top: 2rem;
 }
 
@@ -294,19 +250,21 @@ button {
   height: 2.4rem;
   border: 1px solid var(--line);
   border-radius: 999px;
-  background: #ffffff;
+  background: var(--surface);
   color: var(--heading);
   font-size: 1.7rem;
   line-height: 1;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: border-color 0.15s ease, transform 0.15s ease;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
 }
 
 .wheel-arrow:not(:disabled):hover,
 .wheel-arrow:not(:disabled):focus-visible {
+  background: var(--heading);
   border-color: var(--heading);
+  color: var(--bg);
   transform: translateY(-1px);
 }
 
@@ -319,7 +277,6 @@ button {
   display: flex;
   gap: 1rem;
   overflow-x: auto;
-  padding: 0.3rem;
   scroll-snap-type: x mandatory;
   justify-content: flex-start;
   -ms-overflow-style: none;
@@ -335,21 +292,19 @@ button {
 }
 
 .project-wheel:focus {
-  outline: 2px solid var(--heading);
-  border-radius: 10px;
+  outline: 2px solid var(--hover-border);
 }
 
 .project-tile {
   flex: 0 0 min(280px, 80vw);
   scroll-snap-align: center;
   border: 1px solid var(--line);
-  background: #ffffff;
-  border-radius: 12px;
+  background: var(--surface);
   padding: 1rem;
   text-decoration: none;
   color: var(--text);
   min-height: 150px;
-  transition: transform 0.15s ease, border-color 0.15s ease;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
 }
 
 .project-tile h3 {
@@ -359,17 +314,23 @@ button {
 
 .project-tile:hover,
 .project-tile:focus-visible {
-  transform: translateY(-2px);
+  background: var(--heading);
   border-color: var(--heading);
+  color: var(--bg);
+  transform: translateY(-2px);
 }
 
 .project-tile:visited {
   color: var(--text);
 }
 
+.status-heading{
+  color: var(--sub-text);
+  font-style: italic;
+}
+
 .content-card {
   border: 1px solid var(--line);
-  border-radius: 14px;
   padding: 1.25rem;
   background: var(--surface);
 }
@@ -377,24 +338,25 @@ button {
 .back-link {
   display: inline-block;
   margin-bottom: 1rem;
+  padding: 0.25rem 0.6rem;
   color: var(--heading);
   text-decoration: none;
   font-weight: 600;
+  transition: background 0.15s ease, color 0.15s ease;
 }
 
 .back-link:hover,
 .back-link:focus-visible {
-  text-decoration: underline;
+  background: var(--heading);
+  color: var(--bg);
 }
 
 .life-updates {
-  width: 50vw;
-  margin: 2rem auto 0;
+  margin: 2rem  0;
   text-align: left;
   color: var(--text);
   display: flex;
   flex-direction: column;
-  gap: 0.55rem;
 }
 
 .life-updates > div {
@@ -405,26 +367,19 @@ button {
   font-weight: 400;
 }
 
+.life-updates p {
+  margin: 0;
+}
+
 .life-updates .date {
   font-weight: 700;
-  color: var(--metal-5);
+  color: var(--heading);
   margin-right: 0.6rem;
 }
 
 @media (max-width: 700px) {
   .profile-card {
     padding: 0.25rem 0;
-  }
-
-  .profile-photo-wrap {
-    max-width: 220px;
-  }
-
-  .profile-main {
-    grid-template-columns: 1fr;
-    justify-items: center;
-    text-align: left;
-    width: 100%;
   }
 
   .project-carousel {
